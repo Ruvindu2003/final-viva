@@ -6,6 +6,7 @@ import { NavBarComponent } from './EmployeeManegement/nav-bar/nav-bar.component'
 import { LoginComponent } from './login/login.component';
 import { EmployeeComponent } from './EmployeeManegement/employee/employee.component';
 import { UpdateComponent } from './update/update.component';
+import { RejisterComponent } from './rejister/rejister.component';
 
 export const routes: Routes = [
 
@@ -15,6 +16,14 @@ export const routes: Routes = [
         component:LoginComponent,
 
     },
+
+    {
+        path:"register",
+        component:RejisterComponent
+
+    },
+
+    
 
     {
     path:"",
