@@ -31,9 +31,20 @@ export class EmployeeComponent {
     console.log("Employee Home Component Loaded");
   }
   AddEmployee() {
+    if (!this.employeeList.name || !this.employeeList.email || !this.employeeList.adrees || !this.employeeList.departments) {
+      alert('All fields are required!');
+      return;
+    }
+
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(this.employeeList.email)) {
+      alert('Please enter a valid email address!');
+      return;
+    }
+
     let newEmployee = { 
       name: this.employeeList.name, 
-      adrees : this.employeeList.adrees , 
+      adrees: this.employeeList.adrees, 
       departments: this.employeeList.departments, 
       email: this.employeeList.email,
       datecreated: new Date().toISOString() 
@@ -43,10 +54,12 @@ export class EmployeeComponent {
       headers: { 'Content-Type': 'application/json' }
     }).subscribe({
       next: (res) => {
-        console.log('Success:', res);
+      alert('Employee added successfully!');
+      console.log('Success:', res);
       },
       error: (err) => {
-        console.error('Error:', err.error);
+      console.error('Error:', err.error);
+      alert('Error adding employee. Please try again.');
       }
     });
   }

@@ -57,15 +57,17 @@ export class UpdateComponent {
 
   searchEmployee(): void {
     if (!this.id.trim()) {
-      console.error('Please enter a valid student ID.');
+      alert('⚠️ Please enter a valid employee ID.');
       return;
     }
 
     this.http.get(`http://localhost:8080/api/employee/Search/${this.id}`).subscribe({
       next: (res) => {
-        this.employee = res; 
+        this.employee = res;
+        alert('✅ Employee found successfully!');
       },
       error: (err) => {
+        alert('❌ Search failed. Please try again.');
         console.error('Search failed', err.error);
       }
     });

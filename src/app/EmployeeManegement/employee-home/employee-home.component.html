@@ -95,13 +95,18 @@
         <p class="text-sm mt-1">Add new employees or adjust your search criteria</p>
       </div>
     </div>
-
-    <!-- Add Employee Button -->
+    <button (click)="printReport()" class="mb-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 flex items-center">
+      <i class="fas fa-print mr-2"></i> Print Report
+    </button>
+ 
     <div class="mt-6 flex justify-end">
-      <button routerLink="dashboard/add-employee" class="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition-colors duration-200 flex items-center">
+      <button routerLink="/dashboard/employee" class="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition-colors duration-200 flex items-center">
         <i class="fas fa-user-plus mr-2"></i> Add New Employee
       </button>
     </div>
   </div>
+
+ 
+  
 </body>
 </html>
