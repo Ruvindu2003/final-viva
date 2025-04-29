@@ -37,7 +37,6 @@
     box-shadow: none;
   }
   
-  /* Responsive adjustments */
   @media (max-width: 991px) {
     .navbar-nav {
       padding-top: 10px;

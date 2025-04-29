@@ -1,0 +1,92 @@
+<div class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <form #employeeForm="ngForm" novalidate>
+        <div class="grid gap-6 mb-6 md:grid-cols-2">
+            <!-- Full Name Field -->
+            <div>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Full Name
+                </label>
+                <input [(ngModel)]="employeeList.name" name="name" type="text" id="name"
+                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                             placeholder="John Doe" required>
+                <div *ngIf="employeeForm.submitted && employeeForm.controls['name']?.errors?.['required']" 
+                         class="text-red-500 text-sm mt-1">
+                    Name is required
+                </div>
+            </div>
+
+           
+
+        <!-- Address Field -->
+        <div class="mb-6">
+            <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Address
+            </label>
+            <input [(ngModel)]="employeeList.adrees  " name="adrees  " type="text" id="adrees  "
+                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                         placeholder="123 Main St" required>
+            <div *ngIf="employeeForm.submitted && employeeForm.controls['adrees  ']?.errors?.['required']" 
+                     class="text-red-500 text-sm mt-1">
+                Address is required
+            </div>
+        </div>
+
+        <!-- Address Field -->
+        <div class="mb-6">
+            <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                datecreated
+            </label>
+            <input [(ngModel)]="employeeList.datecreated" name="datecreated" type="text" id="datecreated"
+                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                         placeholder="123 Main St" required>
+            <div *ngIf="employeeForm.submitted && employeeForm.controls['datecreated']?.errors?.['required']" 
+                     class="text-red-500 text-sm mt-1">
+                Address is required
+            </div>
+        </div>
+
+        <!-- Gender Field -->
+        <div class="mb-6">
+            <label for="department" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            Department
+            </label>
+            <select [(ngModel)]="employeeList.departments" name="departments" id="departments"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                required>
+            <option value="" disabled selected>Select Department</option>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="FINANCE">FINANCE</option>
+            <option value="Operations">Operations</option>
+            </select>
+            <div *ngIf="employeeForm.submitted && employeeForm.controls['department']?.errors?.['required']" 
+             class="text-red-500 text-sm mt-1">
+            Department is required
+            </div>
+        </div>
+      <div>
+        <div class="mb-6">
+            <label for="salary" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            email
+            </label>
+            <input [(ngModel)]="employeeList.email" name="email type="name="email" id="email"
+                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                 placeholder="17" required>
+            <div *ngIf="employeeForm.submitted && employeeForm.controls['age']?.errors?.['required']" 
+                 class="text-red-500 text-sm mt-1">
+            Salary is required
+            </div>
+        </div>
+      <div>
+
+
+
+      </div>
+
+        <!-- Submit Button -->
+        <button (click)="AddEmployee()" type="submit" 
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Add Employee
+        </button>
+  
+</div>
