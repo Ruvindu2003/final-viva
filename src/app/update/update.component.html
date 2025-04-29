@@ -1,1 +1,54 @@
-<p>update works!</p>
+>
+
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow p-6">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Update Employee </h2>
+        
+        <!-- Search Field -->
+        <div class="mb-4 flex items-center gap-2">
+            <input [(ngModel)]="id" type="text" id="search" name="search" placeholder="Search Student" 
+                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <button (click)="searchEmployee()" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+        </div>
+
+        <form class="space-y-4" method="post" action="/update-student">
+            <div>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Full Name</label>
+                <input [(ngModel)]="employee.name" type="text" id="name" name="name"
+                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                       placeholder="John Doe" required>
+            </div>
+
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                <input [(ngModel)]="employee.email" type="email" id="email" name="email"
+                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                       placeholder="name@school.com" required>
+            </div>
+
+            <select [(ngModel)]="employee.departments" name="departments" id="departments"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            required>
+        <option value="" disabled selected>Select Department</option>
+        <option value="HR">HR</option>
+        <option value="IT">IT</option>
+        <option value="FINANCE">FINANCE</option>
+        <option value="Operations">Operations</option>
+        </select>
+
+            <div class="flex justify-end gap-3 mt-6">
+                <button routerLink="/dashbord/manage-Student" type="button" 
+                        class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5">
+                    Cancel
+                </button>
+                <button type="submit" (click)="updateEmployee()"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none">
+                    Update Student
+                </button>
+            </div>
+        </form>
+    </div>
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+
+

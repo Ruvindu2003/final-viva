@@ -55,7 +55,7 @@ searchEmployee(id: number) {
   this.employee.searchEmployee(id).subscribe({
     next: (res) => {
       console.log(res);
-      this.employeeList = Array.isArray(res) ? res : [res]; // Ensure the response is an array
+      this.employeeList = Array.isArray(res) ? res : [res]; 
     },
     error: (err) => {
       console.error('Error searching employee:', err);
